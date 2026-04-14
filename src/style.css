@@ -1,0 +1,146 @@
+/* Reset cơ bản */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Nền trang */
+body {
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: #333;
+  padding: 20px;
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 32px;
+  font-weight: bold;
+  background: linear-gradient(270deg, red, orange, yellow, green, cyan, blue, violet);
+  background-size: 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow 5s linear infinite;
+}
+
+/* Tiêu đề */
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: white;
+}
+
+/* Container */
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap; /* FIX: sai flex-direction */
+}
+
+/* CARD chung (gộp sanbong1 + sanbong2) */
+.sanbong1,
+.sanbong2 {
+  width: 350px;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.sanbong1:hover,
+.sanbong2:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+/* Tên sân */
+.sanbong1 h3,
+.sanbong2 h3 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #2a5298;
+}
+
+/* Giá */
+.sanbong1 p,
+.sanbong2 p {
+  font-size: 14px;
+  margin-bottom: 15px;
+  line-height: 1.5;
+  text-align: center;
+  font-weight: 700;
+}
+
+/* Label */
+label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* Input */
+input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: 0.2s;
+}
+
+input:focus {
+  border-color: #2a5298;
+}
+
+/* Button */
+button {
+  width: 100%;
+  margin-top: 15px;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #2a5298;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #1e3c72;
+}
+
+/* Status */
+.status {
+  margin-top: 12px;
+  padding: 8px;
+  text-align: center;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+/* Còn trống */
+.available {
+  background: #e6ffed;
+  color: #28a745;
+}
+
+/* Đã đặt */
+.booked {
+  background: #ffe6e6;
+  color: #dc3545;
+}
+
+/* Animation chữ */
+@keyframes rainbow {
+  0% { background-position: 0%; }
+  100% { background-position: 100%; }
+}
