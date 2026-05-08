@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test API</title>
+</head>
+<body>
+
+<button onclick="loadProducts()">
+    Load Products
+</button>
+
+<ul id="list"></ul>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script>
+
+function loadProducts()
+{
+    axios.get("http://localhost:5204/api/product")
+    .then(response => {
+
+        console.log(response.data);
+
+        const products = response.data;
+
+        const list = document.getElementById("list");
+
+        list.innerHTML = "";
+
+        products.forEach(product => {
+
+            list.innerHTML += `
+                <li>
+                    ${product.name} - ${product.price}
+                </li>
+            `;
+        });
+
+    })
+    .catch(error => {
+        console.log(error);
+    });
+}
+
+</script>
+
+</body>
+</html>
